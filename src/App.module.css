@@ -1,0 +1,25 @@
+.wrapper {
+    max-width: 70rem;
+    margin: 2rem auto; /*Centralizar o conteúdo*/
+    padding: 0 1rem; /*Responsividade caso a tela diminua*/
+
+    display: grid;
+    /*primeira coluna tem tamanho fixo enquanto a segunda tem tamanho adptável*/
+    grid-template-columns: 256px 1fr;
+     /*Espaçamento entre as duas colunas  */
+    gap: 2rem; 
+    /* Por padrão, o css irá alongar a side bar para tornala de igual tamanho aos meus posts, com o align-items ele forçar ambos ficarem colados em uma linha vertical no topo de suas cabeças */
+    align-items: flex-start;
+}
+
+@media (max-width: 768px) {
+    /* diminuindo para 87% nosso font-size */
+    html {
+        font-size: 87.5%;
+    }
+    
+    .wrapper {
+        /* reduzindo as duas colunas definidas anteriormente para uma só com tamanho adptável a tela do celular, em outros palavras estamos jogando a side bar para cima dos <Posts /> */
+        grid-template-columns: 1fr;
+    }
+}
